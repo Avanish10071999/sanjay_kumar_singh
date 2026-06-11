@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
-
-const isGithubPages = process.env.GITHUB_PAGES === "true";
+const isGithubPages = process.env.GITHUB_PAGES === "true" || process.env.NODE_ENV === "production";
 const repoName = "sanjay_kumar_singh";
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
   images: {
     unoptimized: true
@@ -13,4 +12,4 @@ const nextConfig: NextConfig = {
   assetPrefix: isGithubPages ? `/${repoName}/` : undefined
 };
 
-export default nextConfig;
+module.exports = nextConfig;

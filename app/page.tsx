@@ -16,8 +16,23 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-white/20" />
         <div className="page-band relative flex min-h-[78vh] items-center py-14">
           <div className="max-w-xl rounded-md border border-line bg-white p-8 shadow-soft">
-            <p className="section-kicker">IIT (BHU) Varanasi</p>
-            <h1 className="mt-4 text-4xl font-black tracking-normal text-ink">{profile.name}</h1>
+            <div className="mb-7 flex items-center gap-5">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-md border border-line bg-paper shadow-sm sm:h-32 sm:w-32">
+                <Image
+                  src="/images/sk sir.png"
+                  alt="Prof. Sanjay Kumar Singh"
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="section-kicker">IIT (BHU) Varanasi</p>
+                <h1 className="mt-3 text-3xl font-black tracking-normal text-ink sm:text-4xl">
+                  {profile.name}
+                </h1>
+              </div>
+            </div>
             <p className="mt-5 text-xl leading-9 text-ink/85">
               I am a <strong>{profile.title}</strong> in the <strong>{profile.department}</strong> at{" "}
               <strong>{profile.institution}</strong>.
