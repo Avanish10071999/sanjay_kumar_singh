@@ -1,5 +1,6 @@
-const isGithubPages = process.env.GITHUB_PAGES === "true" || process.env.NODE_ENV === "production";
 const repoName = "sanjay_kumar_singh";
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const basePath = isGithubPages ? `/${repoName}` : "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,8 +9,11 @@ const nextConfig = {
     unoptimized: true
   },
   trailingSlash: true,
-  basePath: isGithubPages ? `/${repoName}` : undefined,
-  assetPrefix: isGithubPages ? `/${repoName}/` : undefined
+  basePath: basePath || undefined,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 module.exports = nextConfig;

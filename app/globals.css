@@ -25,7 +25,7 @@ body {
 }
 
 .page-band {
-  @apply mx-auto w-full max-w-6xl px-5 sm:px-7 lg:px-8;
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-7 lg:px-8;
 }
 
 .section-title {
@@ -37,5 +37,38 @@ body {
 }
 
 .content-card {
-  @apply rounded-md border border-line bg-white p-6 shadow-soft;
+  @apply rounded-xl border border-line bg-white p-6 shadow-soft transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.65s ease both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.65s ease both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.55s ease both;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
